@@ -1,5 +1,5 @@
 {
-  "name": "evidenceekanem/evidenceekanem-tinify-laravel",
+  "name": "evidenceekanem/tinify-laravel",
   "type": "library",
   "description": "Tinify API support with laravel",
   "keywords": ["tinify","tinypng", "laravel"],
