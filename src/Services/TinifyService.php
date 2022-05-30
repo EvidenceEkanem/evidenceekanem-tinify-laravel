@@ -1,5 +1,5 @@
 <?php
-namespace yasmuru\LaravelTinify\Services;
+namespace evidenceekanem\LaravelTinify\Services;
 
 use Tinify\Source;
 use Tinify\Tinify;
