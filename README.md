@@ -27,10 +27,10 @@ And set a env variable `TINIFY_APIKEY` with your tinypng api key.
 If you want to directly upload the image to `aws s3`, you need set the env variables of following with your aws s3 credentials.
 
 ```php
-    S3_KEY=
-    S3_SECRET=
-    S3_REGION=
-    S3_BUCKET=
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
+    AWS_DEFAULT_REGION=
+    AWS_BUCKET=
 ```
 
 ## Examples
@@ -52,11 +52,11 @@ If you want to directly upload the image to `aws s3`, you need set the env varia
 
 ```php
 
-	$s3_result = Tinify::fileToS3('\path\to\file', $s3_bucket_name, '/path/to/save/in/bucket');
+	$s3_result = Tinify::fileToS3('\path\to\file', $AWS_BUCKET_name, '/path/to/save/in/bucket');
 
-	$s3_result = Tinify::bufferToS3($source_data, $s3_bucket_name, '/path/to/save/in/bucket');
+	$s3_result = Tinify::bufferToS3($source_data, $AWS_BUCKET_name, '/path/to/save/in/bucket');
 
-	$s3_result = Tinify::urlToS3($image_url, $s3_bucket_name, '/path/to/save/in/bucket');
+	$s3_result = Tinify::urlToS3($image_url, $AWS_BUCKET_name, '/path/to/save/in/bucket');
 
 	/** To get the url of saved image **/
 	$s3_image_url = $s3_result->location();

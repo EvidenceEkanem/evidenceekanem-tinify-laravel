@@ -20,9 +20,9 @@ class TinifyService {
         $this->client = new Tinify();
         $this->client->setKey($this->apikey);
 
-        $this->s3_key = env('S3_KEY');
-        $this->s3_secret = env('S3_SECRET');
-        $this->s3_region = env('S3_REGION');
+        $this->AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID');
+        $this->AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY');
+        $this->AWS_DEFAULT_REGION = env('AWS_DEFAULT_REGION');
     }
     public function setKey($key) {
         return $this->client->setKey($key);
@@ -53,7 +53,7 @@ class TinifyService {
     }
 
     function isS3Set() {
-        if($this->s3_key && $this->s3_secret && $this->s3_region ) {
+        if($this->AWS_ACCESS_KEY_ID && $this->AWS_SECRET_ACCESS_KEY && $this->AWS_DEFAULT_REGION ) {
             return true;
         }
 
@@ -65,9 +65,9 @@ class TinifyService {
             return Source::fromFile($source_path)
                 ->store(array(
                     "service" => "s3",
-                    "aws_access_key_id" => $this->s3_key,
-                    "aws_secret_access_key" => $this->s3_secret,
-                    "region" => $this->s3_region,
+                    "aws_access_key_id" => $this->AWS_ACCESS_KEY_ID,
+                    "aws_secret_access_key" => $this->AWS_SECRET_ACCESS_KEY,
+                    "region" => $this->AWS_DEFAULT_REGION,
                     "path" => $bucket . $destination_path,
                 ));
         }
@@ -78,9 +78,9 @@ class TinifyService {
             return Source::fromBuffer($string)
                 ->store(array(
                     "service" => "s3",
-                    "aws_access_key_id" => $this->s3_key,
-                    "aws_secret_access_key" => $this->s3_secret,
-                    "region" => $this->s3_region,
+                    "aws_access_key_id" => $this->AWS_ACCESS_KEY_ID,
+                    "aws_secret_access_key" => $this->AWS_SECRET_ACCESS_KEY,
+                    "region" => $this->AWS_DEFAULT_REGION,
                     "path" => $bucket . $path,
                 ));
         }
@@ -91,9 +91,9 @@ class TinifyService {
             return Source::fromUrl($url)
                 ->store(array(
                     "service" => "s3",
-                    "aws_access_key_id" => $this->s3_key,
-                    "aws_secret_access_key" => $this->s3_secret,
-                    "region" => $this->s3_region,
+                    "aws_access_key_id" => $this->AWS_ACCESS_KEY_ID,
+                    "aws_secret_access_key" => $this->AWS_SECRET_ACCESS_KEY,
+                    "region" => $this->AWS_DEFAULT_REGION,
                     "path" => $bucket . $path,
                 ));
         }
