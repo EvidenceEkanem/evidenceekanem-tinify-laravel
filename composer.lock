@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2e5468aa2c4a2674b8e0aa1c4cb6c34",
+    "content-hash": "445385b71ea54817d1c6a2b8137952b9",
     "packages": [
         {
             "name": "tinify/tinify",
