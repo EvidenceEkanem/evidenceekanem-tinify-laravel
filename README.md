@@ -1,4 +1,4 @@
-# ysTinify-laravel
+# evidenceekanem/tinify-laravel
 Tinify API support with laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/https://packagist.org/packages/evidenceekanem/tinify-laravel.svg?style=flat-square)](https://packagist.org/packages/evidenceekanem/tinify-laravel)
