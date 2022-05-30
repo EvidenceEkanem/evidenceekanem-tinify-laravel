@@ -6,7 +6,7 @@ Tinify API support with laravel
 ## Install
 
 ``` bash
-$ composer require yasmuru/ys-tinify-laravel
+$ composer require evidenceekanem/tinify-laravel
 ```
 
 Add this to your config/app.php, 

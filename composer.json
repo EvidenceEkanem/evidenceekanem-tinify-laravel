@@ -1,13 +1,13 @@
 {
-  "name": "yasmuru/ys-tinify-laravel",
+  "name": "evidenceekanem/evidenceekanem-tinify-laravel",
   "type": "library",
   "description": "Tinify API support with laravel",
   "keywords": ["tinify","tinypng", "laravel"],
   "license": "MIT",
   "authors": [
     {
-      "name": "yasmuru",
-      "email": "yasmuru@gmail.com"
+      "name": "EvidenceEkanem",
+      "email": "ekanemevidence@gmail.com"
     }
   ],
   "require": {
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "yasmuru\\LaravelTinify\\": "src"
+      "evidenceekanem\\LaravelTinify\\": "src"
     }
   },
   "minimum-stability": "stable"
