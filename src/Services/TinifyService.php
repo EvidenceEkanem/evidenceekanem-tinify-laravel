@@ -1,6 +1,7 @@
 <?php
 namespace evidenceekanem\LaravelTinify\Services;
 
+use Tinify\ClientException;
 use Tinify\Source;
 use Tinify\Tinify;
 
@@ -13,16 +14,16 @@ class TinifyService {
      * @throws Exception
      */
     public function __construct() {
-        $this->apikey = config('tinify.apikey');
+        $this->apikey = config('tinify.API_KEY');
         if(!$this->apikey) {
             throw new \InvalidArgumentException('Please set TINIFY_API_KEY environment variables.');
         }
         $this->client = new Tinify();
         $this->client->setKey($this->apikey);
 
-        $this->AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID');
-        $this->AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY');
-        $this->AWS_DEFAULT_REGION = env('AWS_DEFAULT_REGION');
+        $this->AWS_ACCESS_KEY_ID = config('tinify.AWS_ACCESS_KEY_ID');
+        $this->AWS_SECRET_ACCESS_KEY = config('tinify.AWS_SECRET_ACCESS_KEY');
+        $this->AWS_DEFAULT_REGION = config('tinify.AWS_DEFAULT_REGION');
     }
     public function setKey($key) {
         return $this->client->setKey($key);

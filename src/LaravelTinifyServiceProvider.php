@@ -3,8 +3,8 @@
 namespace evidenceekanem\LaravelTinify;
 
 use Illuminate\Support\ServiceProvider;
-use Tinify\Tinify;
-
+use evidenceekanem\LaravelTinify\Facades\Tinify;
+use evidenceekanem\LaravelTinify\Services\TinifyService;
 class LaravelTinifyServiceProvider extends ServiceProvider {
 
 	/**
@@ -20,8 +20,6 @@ class LaravelTinifyServiceProvider extends ServiceProvider {
 	*/
 	public function boot()
 	{	
-		$configPath = __DIR__ . '/../config/tinify.php';
-        $this->publishes([$configPath => config_path('tinify.php')], 'config');
 	}
 
 	/**
@@ -33,8 +31,12 @@ class LaravelTinifyServiceProvider extends ServiceProvider {
 	{
 		$configPath = __DIR__ . '/../config/tinify.php';
         $this->mergeConfigFrom($configPath, 'tinify');
-		$this->app->bind('evidenceekanem', 'evidenceekanem\LaravelTinify\Services\TinifyService');
 
+		$this->publishes([$configPath => config_path('tinify.php')], 'config');
+
+		$this->app->bind(Tinify::class, function () {
+            return TinifyService::create(config('tinify'));
+        });
 	}
 
 	/**
