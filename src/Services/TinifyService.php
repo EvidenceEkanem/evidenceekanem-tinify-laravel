@@ -15,7 +15,7 @@ class TinifyService {
     public function __construct() {
         $this->apikey = config('tinify.apikey');
         if(!$this->apikey) {
-            throw new \InvalidArgumentException('Please set TINIFY_APIKEY environment variables.');
+            throw new \InvalidArgumentException('Please set TINIFY_API_KEY environment variables.');
         }
         $this->client = new Tinify();
         $this->client->setKey($this->apikey);

@@ -1,8 +1,9 @@
 # evidenceekanem/tinify-laravel
 Tinify API support with laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/https://packagist.org/packages/evidenceekanem/tinify-laravel.svg?style=flat-square)](https://packagist.org/packages/evidenceekanem/tinify-laravel)
-
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/evidenceekanem/tinify-laravel?label=version)](https://packagist.org/packages/evidenceekanem/tinify-laravel)
+[![Total Downloads](http://poser.pugx.org/evidenceekanem/tinify-laravel/downloads)](https://packagist.org/packages/evidenceekanem/tinify-laravel)
+[![License](http://poser.pugx.org/evidenceekanem/tinify-laravel/license)](https://packagist.org/packages/evidenceekanem/tinify-laravel)
 ## Install
 
 ``` bash
@@ -13,16 +14,16 @@ Add this to your config/app.php,
 
 under "providers":
 ```php
-        evidenceekanem\LaravelTinify\LaravelTinifyServiceProvider::class,
+    evidenceekanem\LaravelTinify\LaravelTinifyServiceProvider::class,
 ```
 under "aliases":
 
 ```php
-        'Tinify' => evidenceekanem\LaravelTinify\Facades\Tinify::class
+    'Tinify' => evidenceekanem\LaravelTinify\Facades\Tinify::class
 ```
 
 
-And set a env variable `TINIFY_APIKEY` with your tinypng api key.
+And set a env variable `TINIFY_API_KEY` with your tinypng api key.
 
 If you want to directly upload the image to `aws s3`, you need set the env variables of following with your aws s3 credentials.
 
